@@ -1,3 +1,17 @@
+#Feature:
+1. Meal fetched from mealdb
+2. Drinks fetched from cocktaildb
+3. hosted in gh pages
+
+
+
+
+
+
+
+
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
