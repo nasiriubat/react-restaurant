@@ -16,14 +16,21 @@ const App = () => {
   const cocktailUrl = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${query}`;
 
 
-  const { data: cocktailData, loading: cocktailLoading, error: cocktailError } = useFetch(
-    type === 'cocktails' ? cocktailUrl : ''
-  );
   const { data: mealData, loading: mealLoading, error: mealError } = useFetch(
     type === 'meals' ? mealUrl : ''
   );
 
-  
+  const { data: cocktailData, loading: cocktailLoading, error: cocktailError } = useFetch(
+    type === 'cocktails' ? cocktailUrl : ''
+  );
+
+  useEffect(() => {
+    if (mealData && type === 'meals') {
+      setSearchResults(mealData.meals || []);
+    } else if (cocktailData && type === 'cocktails') {
+      setSearchResults(cocktailData.drinks || []);
+    }
+  }, [mealData, cocktailData, type]);
 
   const handleSearch = (query, type) => {
     setSelectedRecipe(null)
