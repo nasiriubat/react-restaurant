@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "http://nasiriubat.github.io/react-restaurant",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -26,4 +27,5 @@
     "gh-pages": "^6.1.1",
     "vite": "^5.2.0"
   }
+ 
 }
